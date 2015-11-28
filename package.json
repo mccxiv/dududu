@@ -1,0 +1,22 @@
+{
+  "name": "dududu",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "cd src && webpack-dev-server ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "material-ui": "^0.13.4",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-tap-event-plugin": "^0.2.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^1.14.0"
+  }
+}

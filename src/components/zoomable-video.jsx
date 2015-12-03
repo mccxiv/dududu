@@ -1,4 +1,10 @@
-class ZoomableVideo extends React.Component {
+import $ from 'jquery';
+import jQuery from 'jquery';
+import React from 'react';
+import ReactDOM from 'react-dom';
+require('../../node_modules/jquery.panzoom/dist/jquery.panzoom.js');
+
+export default class ZoomableVideo extends React.Component {
 	componentDidMount() {
 		var el = $(ReactDOM.findDOMNode(this));
 
@@ -21,7 +27,6 @@ class ZoomableVideo extends React.Component {
 		});
 
 		vcc.on('mousewheel', function() {
-			console.log('wheel.');
 			setTimeout(checkZoomLevel, 200);   // Check initial
 			setTimeout(checkZoomLevel, 1500);  // Check final state
 		});

@@ -2,12 +2,12 @@ body {
     margin: 0;
 }
 
-body, .main, .app {
+body, .main, .channel {
     height: 100vh;
     width: 100vw;
 }
 
-.app {
+.channel {
     display: flex;
     flex-direction: column;
 }

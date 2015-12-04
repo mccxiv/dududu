@@ -46,7 +46,7 @@ export default class ZoomableVideo extends React.Component {
 					<iframe className="video"
 							frameBorder="0"
 							allowFullScreen
-							src="http://player.twitch.tv/?channel={this.props.channel}&html5"
+							src={`http://player.twitch.tv/?channel=${this.props.channel}&html5`}
 					></iframe>
 				</div>
 			</div>

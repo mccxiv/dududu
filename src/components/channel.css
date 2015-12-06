@@ -1,0 +1,14 @@
+.channel {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.backButton {
+    position: absolute !important;
+    top: 15px;
+    right: 15px;
+    z-index: 3;
+}

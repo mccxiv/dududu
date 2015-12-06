@@ -2,14 +2,15 @@ import $ from 'jquery';
 import jQuery from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styles from './zoomable-video.css';
 require('../../node_modules/jquery.panzoom/dist/jquery.panzoom.js');
 
 export default class ZoomableVideo extends React.Component {
 	componentDidMount() {
 		var el = $(ReactDOM.findDOMNode(this));
 
-		var v = el.find('.video');
-		var vc = el.find('.video-container');
+		var v = el.find('.' + styles.video);
+		var vc = el.find('.' + styles.videoContainer);
 		var vcc = el;
 
 		vc.panzoom({
@@ -41,9 +42,9 @@ export default class ZoomableVideo extends React.Component {
 
 	render() {
 		return (
-			<div className="video-container-container">
-				<div className="video-container">
-					<iframe className="video"
+			<div className={styles.videoContainerContainer}>
+				<div className={styles.videoContainer}>
+					<iframe className={styles.video}
 							frameBorder="0"
 							allowFullScreen
 							src={`http://player.twitch.tv/?channel=${this.props.channel}&html5`}

@@ -8,7 +8,20 @@
 
 .backButton {
     position: absolute !important;
-    top: 15px;
-    right: 15px;
+    right: 5px;
+    min-width: 0 !important;
+    padding: 0 !important;
     z-index: 3;
+    color: white !important;
+}
+
+@media all and (min-aspect-ratio: 7/5) {
+    .channel {
+        flex-direction: row !important;
+    }
+
+    .backButton {
+        top: 5px;
+        right: 350px;
+    }
 }

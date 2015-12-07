@@ -1,6 +1,6 @@
 module.exports = {
 	entry: './index.jsx',
-	output: 'bundle.js',
+	output: '/bundle.js',
 	module: {
 		loaders: [
 			{

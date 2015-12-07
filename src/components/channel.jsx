@@ -1,19 +1,25 @@
+import $ from 'jquery';
 import React from 'react';
 import styles from './channel.css';
-import IconButton from 'material-ui/lib/icon-button';
-import FontIcon from 'material-ui/lib/font-icon';
-import FlatButton from 'material-ui/lib/flat-button';
 import ZoomableVideo from './zoomable-video.jsx';
 import ResponsiveChat from './responsive-chat.jsx';
 import {Link} from 'react-router';
+import {Button, IconButton, Icon} from 'react-mdl';
 
 export default class Channel extends React.Component {
+	componentDidMount() {
+		document.title = this.props.params.channel + ' - dududu';
+	}
+
 	render() {
 		console.log(this.props);
 		return (
 			<div className={styles.channel}>
-				<ZoomableVideo channel={this.props.params.channel}/>
-				<ResponsiveChat channel={this.props.params.channel}/>
+				<Button className={styles.backButton} component={Link} to="/">
+					<Icon name="chevron_left" />
+				</Button>
+				<ZoomableVideo channel={this.props.params.channel} />
+				<ResponsiveChat channel={this.props.params.channel} />
 			</div>
 		);
 	}

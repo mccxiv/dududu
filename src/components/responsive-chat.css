@@ -3,3 +3,11 @@
     margin-top: -50px;
     margin-bottom: -77px;
 }
+
+@media all and (min-aspect-ratio: 7/5) {
+    .chat {
+        width: 340px;
+        flex: none;
+        margin: 0;
+    }
+}

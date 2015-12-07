@@ -13,9 +13,9 @@
     "history": "^1.13.1",
     "jquery": "^2.1.4",
     "jquery.panzoom": "github:timmywil/jquery.panzoom",
-    "material-ui": "^0.13.4",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "react-mdl": "^1.0.2",
     "react-router": "^1.0.0",
     "react-tap-event-plugin": "^0.2.1",
     "twitch-sdk": "github:justintv/twitch-js-sdk"

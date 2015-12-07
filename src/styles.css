@@ -1,21 +1,12 @@
 body {
     margin: 0;
-    //background-color: #1E1E1E;
 }
 
-body, .main, .channel {
+.main {
+    background-color: #1E1E1E;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
-}
-
-
-
-.content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    color: #D3D3D3;
 }
 
 .nav {
@@ -26,23 +17,4 @@ body, .main, .channel {
 
 .nav h1 {
     line-height: unset !important;
-}
-
-
-
-@media all and (min-aspect-ratio: 7/5) {
-    .content {
-        flex-direction: row !important;
-    }
-
-    .video-container-container {
-        width: unset;
-        flex: 1;
-    }
-
-    .chat {
-        width: 340px;
-        flex: none;
-        margin: 0;
-    }
 }

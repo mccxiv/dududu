@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import styles from './channel.css';
 import ZoomableVideo from './zoomable-video.jsx';

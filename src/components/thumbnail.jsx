@@ -6,8 +6,6 @@ import {Link} from 'react-router';
 
 export default class Thumbnail extends React.Component {
 	render() {
-		//var img, name, game, viewers;
-
 		try {
 			var img = this.props.stream.preview.medium;
 			var name = this.props.stream.channel.name;

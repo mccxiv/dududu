@@ -5,6 +5,8 @@ import Thumbnail from './thumbnail.jsx';
 
 export default class Directory extends React.Component {
 	componentWillMount() {
+		document.title = 'A less sucky Twitch - dududu';
+
 		Twitch.api({method: '/streams/followed'}, (e, response) => {
 			this.setState({streams: response.streams});
 		});

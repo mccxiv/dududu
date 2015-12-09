@@ -1,17 +1,18 @@
 import React from 'react';
 import styles from './thumbnail.css';
 import cn from 'classnames';
-import {Card} from 'react-mdl';
+import {Button, Icon} from 'react-mdl';
 import {Link} from 'react-router';
 
 export default class Thumbnail extends React.Component {
 	render() {
-		var img, name, game;
+		//var img, name, game, viewers;
 
 		try {
-			img = this.props.stream.preview.medium;
-			name = this.props.stream.channel.name;
-			game = this.props.stream.channel.game;
+			var img = this.props.stream.preview.medium;
+			var name = this.props.stream.channel.name;
+			var game = this.props.stream.channel.game;
+			var viewers = this.props.stream.viewers;
 		} catch(e) {}
 
 		return (
@@ -23,6 +24,9 @@ export default class Thumbnail extends React.Component {
 					className={styles.thumbnail}
 					style={{background: 'url(' + img + ') center / cover'}}
 				></div>
+				<span className={styles.extra}>
+					<Icon name="people" /> {viewers}
+				</span>
 				<span className={styles.label}>{name}. {game}</span>
 			</Link>
 		);

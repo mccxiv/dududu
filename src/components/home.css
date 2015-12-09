@@ -1,0 +1,12 @@
+.sandstorm {
+    position: absolute;
+    top: 30px;
+    right: 91px;
+}
+
+.sandstorm2 {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    animation-delay: 2s !important;
+}

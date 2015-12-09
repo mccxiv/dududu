@@ -6,7 +6,15 @@ import Thumbnail from './thumbnail.jsx';
 export default class Directory extends React.Component {
 	componentWillMount() {
 		document.title = 'A less sucky Twitch - dududu';
+		this.updateInterval = setInterval(this.updateStreams.bind(this), 60000);
+		this.updateStreams();
+	}
 
+	componentWillUnmount() {
+		clearTimeout(this.updateInterval);
+	}
+
+	updateStreams() {
 		Twitch.api({method: '/streams/followed'}, (e, response) => {
 			this.setState({streams: response.streams});
 		});
@@ -18,7 +26,7 @@ export default class Directory extends React.Component {
 
 		return (
 			<div className={styles.directory}>
-				<h1>Following</h1>
+				<h3>Following</h3>
 				{streams.map((stream, i) => {
 					return (
 						<Thumbnail
@@ -28,6 +36,16 @@ export default class Directory extends React.Component {
 						/>
 					);
 				})}
+
+				{streams.map((stream, i) => {
+						return (
+						<Thumbnail
+								className={styles.thumbnail}
+								stream={stream}
+								key={i}
+						/>
+								);
+						})}
 			</div>
 		);
 	}

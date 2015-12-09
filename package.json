@@ -19,6 +19,7 @@
     "react-mdl": "^1.0.2",
     "react-router": "^1.0.0",
     "react-tap-event-plugin": "^0.2.1",
+    "react-timer-mixin": "^0.13.3",
     "twitch-sdk": "github:justintv/twitch-js-sdk"
   },
   "devDependencies": {

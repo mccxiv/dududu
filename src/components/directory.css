@@ -1,5 +1,9 @@
 .directory {
-    padding: 30px;
+    padding: 5px;
+}
+
+.directory h3 {
+    padding-left: 30px;
 }
 
 .thumbnail {

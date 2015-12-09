@@ -27,25 +27,21 @@ export default class Directory extends React.Component {
 		return (
 			<div className={styles.directory}>
 				<h3>Following</h3>
-				{streams.map((stream, i) => {
-					return (
-						<Thumbnail
-							className={styles.thumbnail}
-							stream={stream}
-							key={i}
-						/>
-					);
-				})}
-
-				{streams.map((stream, i) => {
+				<div className={styles.streams}>
+					{streams.map((stream, i) => {
 						return (
-						<Thumbnail
+							<Thumbnail
 								className={styles.thumbnail}
 								stream={stream}
 								key={i}
-						/>
-								);
-						})}
+							/>
+						);
+					})}
+
+					{"someletters".split('').map(() => {
+						return <div className={styles.thumbnailFiller} ></div>;
+					})}
+				</div>
 			</div>
 		);
 	}

@@ -7,5 +7,19 @@
 }
 
 .thumbnail {
+    width: 225px;
     margin: 5px;
+}
+
+.streams {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.thumbnailFiller {
+    width: 225px;
+    margin: 5px;
+    height: 0;
 }

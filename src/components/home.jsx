@@ -17,8 +17,6 @@ export default class Home extends React.Component {
 	}
 
 	render() {
-		console.log('state!', this.state);
-
 		var component;
 		if (!this.state.user) component = <LoginButton />;
 		else component = <Directory user={this.state.user} />;

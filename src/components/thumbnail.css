@@ -1,5 +1,5 @@
 .thumbnailContainer {
-    width: 256px;
+    width: 240px;
     display: inline-block;
     position: relative;
     background-color: transparent;
@@ -44,10 +44,10 @@
     padding: 0 4px;
     background-color: rgba(0, 0, 0, 0.80);
     border-bottom-left-radius: 3px;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .extra i {
     font-size: inherit;
-    vertical-align: middle;
+    vertical-align: -2px;
 }

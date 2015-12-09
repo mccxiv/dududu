@@ -5,12 +5,28 @@ import {Button, Icon} from 'react-mdl';
 import {Link} from 'react-router';
 
 export default class Thumbnail extends React.Component {
+	/**
+	 * Time since a date, in h:mm
+	 * @param {Date} since
+	 * return {string}
+	 */
+	calculateUptime(since) {
+		var diff = new Date(new Date() - since);
+		var h = diff.getUTCHours();
+		var m = ('0' + diff.getUTCMinutes()).slice(-2);
+		return h + ':' + m;
+	}
+
 	render() {
 		try {
-			var img = this.props.stream.preview.medium;
-			var name = this.props.stream.channel.name;
-			var game = this.props.stream.channel.game;
-			var viewers = this.props.stream.viewers;
+			var stream = this.props.stream;
+			var img = stream.preview.medium;
+			var name = stream.channel.name;
+			var game = stream.channel.game;
+			var viewers = stream.viewers;
+			var displayName = stream.channel.display_name;
+			var uptime = this.calculateUptime(new Date(stream.created_at));
+
 		} catch(e) {}
 
 		return (
@@ -23,9 +39,9 @@ export default class Thumbnail extends React.Component {
 					style={{background: 'url(' + img + ') center / cover'}}
 				></div>
 				<span className={styles.extra}>
-					<Icon name="people" /> {viewers}
+					{uptime} <Icon name="people" /> {viewers}
 				</span>
-				<span className={styles.label}>{name}. {game}</span>
+				<span className={styles.label}>{displayName}. {game}</span>
 			</Link>
 		);
 	}

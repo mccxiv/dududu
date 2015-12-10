@@ -9,6 +9,14 @@ export default class Directory extends React.Component {
 
 		this.updateFollowing();
 		this.updateGames();
+
+		this.timers = [];
+		this.timers.push(setInterval(this.updateFollowing.bind(this), 60000));
+		this.timers.push(setInterval(this.updateGames.bind(this), 120000));
+	}
+
+	componentWillUnmount() {
+		this.timers.map(clearInterval);
 	}
 
 	updateFollowing() {
@@ -58,6 +66,5 @@ export default class Directory extends React.Component {
 				{elements}
 			</div>
 		);
-
 	}
 }

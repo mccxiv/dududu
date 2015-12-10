@@ -1,0 +1,16 @@
+.thumbnail {
+    width: 225px;
+    margin: 5px;
+}
+
+.streams {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.thumbnailFiller {
+    width: 225px;
+    margin: 5px;
+    height: 0;
+}

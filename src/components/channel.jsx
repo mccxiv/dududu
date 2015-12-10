@@ -8,7 +8,7 @@ import {Button, IconButton, Icon} from 'react-mdl';
 export default class Channel extends React.Component {
 	componentDidMount() {
 		var chan = this.props.params.channel;
-		document.title = chan[0].toUpperCase() + chan.slice(1) + ' - dududu';
+		document.title = chan[0].toUpperCase() + chan.slice(1) + ' - Twitch 2';
 	}
 
 	render() {

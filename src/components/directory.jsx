@@ -5,7 +5,7 @@ import Streams from './streams.jsx';
 
 export default class Directory extends React.Component {
 	componentWillMount() {
-		document.title = 'dududu. A less sucky Twitch';
+		document.title = 'Streams - Twitch 2';
 
 		this.updateFollowing();
 		this.updateGames();

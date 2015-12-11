@@ -22,26 +22,27 @@ export default class Thumbnail extends React.Component {
 			var stream = this.props.stream;
 			var img = stream.preview.medium;
 			var name = stream.channel.name;
-			var game = stream.channel.game;
+			var title = stream.channel.status;
 			var viewers = stream.viewers;
 			var displayName = stream.channel.display_name;
 			var uptime = this.calculateUptime(new Date(stream.created_at));
-
 		} catch(e) {}
 
 		return (
 			<Link
 				to={name}
 				className={cn(styles.thumbnailContainer, this.props.className)}
+				title={title}
 			>
 				<div
 					className={styles.thumbnail}
 					style={{background: 'url(' + img + ') center / cover'}}
 				></div>
+				<span className={styles.name}>{displayName}</span>
 				<span className={styles.extra}>
 					{uptime} <Icon name="people" /> {viewers}
 				</span>
-				<span className={styles.label}>{displayName}. {game}</span>
+				<span className={styles.title}>{title}</span>
 			</Link>
 		);
 	}

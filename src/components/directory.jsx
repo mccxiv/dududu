@@ -2,6 +2,7 @@ import React from 'react';
 import reqwest from 'reqwest';
 import styles from './directory.css';
 import Streams from './streams.jsx';
+import Twitch from '../providers/twitch';
 
 export default class Directory extends React.Component {
 	componentWillMount() {
@@ -20,30 +21,26 @@ export default class Directory extends React.Component {
 	}
 
 	updateFollowing() {
-		Twitch.api({method: '/streams/followed'}, (e, response) => {
+		Twitch.api({method: '/kraken/streams/followed'}, (response) => {
 			this.setState({following: response.streams});
 		});
 	}
 
 	updateGames() {
-		reqwest({
-			url: 'https://api.twitch.tv/api/users/k3nt0456/follows/games/live',
-			type: 'jsonp',
-			success: (data) => {
-				data.follows.forEach((game) => {
-					game = game.game; // :(
-					reqwest({
-						url: 'https://api.twitch.tv/kraken/streams',
-						data: {game: game.name},
-						type: 'jsonp',
-						success: (data) => {
-							var games = (this.state? this.state.games : {}) || {};
-							games[game.name] = data.streams;
-							this.setState({games: games});
-						}
-					});
-				});
-			}
+		var user = this.props.user;
+
+		Twitch.api({method: '/api/users/'+user+'/follows/games/live'}, (data) => {
+			data.follows.forEach((game) => {
+				game = game.game; // :(
+				Twitch.api(
+					{method: '/kraken/streams', data: {game: game.name}},
+					(data) => {
+						var games = (this.state? this.state.games : {}) || {};
+						games[game.name] = data.streams;
+						this.setState({games: games});
+					}
+				);
+			});
 		});
 	}
 

@@ -6,15 +6,16 @@ import Directory from './directory.jsx';
 import styles from './home.css';
 import shake from '../assets/shake.css'
 import cn from 'classnames';
+import apiKey from '../config/api-key.js';
 
 export default class Home extends React.Component {
 	componentWillMount() {
 		this.setState({user: false});
 
-		Twitch.getStatus((error, status) => {
-			console.log(status);
-			if (status.authenticated) Twitch.api({method: '/'}, (e, res) => {
-				this.setState({user: res.token.user_name});
+		Twitch.init(apiKey, (status) => {
+			console.log('Twitch initialized, staus is:', status);
+			if (status.token.user_name) this.setState({
+				user: status.token.user_name
 			});
 		});
 	}

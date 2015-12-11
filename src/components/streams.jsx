@@ -4,9 +4,10 @@ import Thumbnail from './thumbnail.jsx';
 
 export default class Streams extends React.Component {
 	render() {
+		var streams = this.props? this.props.streams || [] : [];
 		return (
 			<div className={styles.streams}>
-				{this.props.streams.map((stream, i) => {
+				{streams.map((stream, i) => {
 					return (
 						<Thumbnail
 							className={styles.thumbnail}
@@ -14,10 +15,6 @@ export default class Streams extends React.Component {
 							key={i}
 						/>
 					);
-				})}
-
-				{'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'.split('').map((o, i) => {
-					return <div className={styles.thumbnailFiller} key={i} ></div>;
 				})}
 			</div>
 		);

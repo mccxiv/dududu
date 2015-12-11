@@ -6,7 +6,7 @@ import Twitch from '../providers/twitch';
 
 export default class Directory extends React.Component {
 	componentWillMount() {
-		document.title = 'Streams - Twitch 2';
+		document.title = 'Following - Twitch 2';
 
 		this.updateFollowing();
 		this.updateGames();

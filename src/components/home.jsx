@@ -10,7 +10,7 @@ import apiKey from '../config/api-key.js';
 
 export default class Home extends React.Component {
 	componentWillMount() {
-		this.setState({user: false});
+		this.setState({user: null});
 
 		Twitch.init(apiKey, (status) => {
 			console.log('Twitch initialized, staus is:', status);
@@ -21,21 +21,21 @@ export default class Home extends React.Component {
 	}
 
 	render() {
-		var component;
-		if (!this.state.user) component = <LoginButton />;
-		else component = <Directory user={this.state.user} />;
+		var user, sandstorm, sandstorm2;
 
-		var sandstorm = cn(
+		sandstorm = cn(
 			styles.sandstorm,
 			shake['shake-slow'],
 			shake['shake-constant']
 		);
 
-		var sandstorm2 = cn(
+		sandstorm2 = cn(
 			styles.sandstorm2,
 			shake['shake-slow'],
 			shake['shake-constant']
 		);
+
+		user = this.state.user;
 
 		return (
 			<div className="home">
@@ -47,7 +47,7 @@ export default class Home extends React.Component {
 					className={sandstorm}
 					src="https://static-cdn.jtvnw.net/emoticons/v1/62834/2.0"
 				/>
-				{component}
+				{user? <Directory user={user} /> : <LoginButton />}
 			</div>
 		);
 	}

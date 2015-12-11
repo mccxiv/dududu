@@ -1,12 +1,10 @@
-.sandstorm {
+.toolbar {
     position: absolute;
-    top: 30px;
-    right: 91px;
+    top: 0;
+    right: 0;
 }
 
-.sandstorm2 {
-    position: absolute;
-    top: 50px;
-    right: 80px;
-    animation-delay: 2s !important;
+.logoutButton {
+    color: inherit !important;
+    margin-left: 7px;
 }

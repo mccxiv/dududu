@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import Twitch from '../providers/twitch';
 import LoginButton from './login-button.jsx';
 import Directory from './directory.jsx';
+import {Button} from 'react-mdl';
 import styles from './home.css';
 import shake from '../assets/shake.css'
 import cn from 'classnames';
@@ -19,34 +20,31 @@ export default class Home extends React.Component {
 		});
 	}
 
+	logout() {
+		Twitch.logout();
+		this.setState({user: null});
+	}
+
 	render() {
-		var user, sandstorm, sandstorm2;
-
-		sandstorm = cn(
-			styles.sandstorm,
-			shake['shake-slow'],
-			shake['shake-constant']
+		var loggedIn = (
+			<div>
+				<div className={styles.toolbar}>
+					Hi {this.state.user}
+					<Button className={styles.logoutButton} onClick={this.logout}>Logout</Button>
+				</div>
+				<Directory user={this.state.user} />
+			</div>
 		);
 
-		sandstorm2 = cn(
-			styles.sandstorm2,
-			shake['shake-slow'],
-			shake['shake-constant']
+		var loggedOut = (
+			<div>
+				<LoginButton />}
+			</div>
 		);
-
-		user = this.state.user;
 
 		return (
 			<div className="home">
-				<img
-					className={sandstorm2}
-					src="https://static-cdn.jtvnw.net/emoticons/v1/62834/1.0"
-				/>
-				<img
-					className={sandstorm}
-					src="https://static-cdn.jtvnw.net/emoticons/v1/62834/2.0"
-				/>
-				{user? <Directory user={user} /> : <LoginButton />}
+				{this.state.user? loggedIn : loggedOut}
 			</div>
 		);
 	}

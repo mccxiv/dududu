@@ -1,0 +1,1 @@
+export default 'Rename this file to client-id.js and replace this string with your Client ID, the one from https://secure.twitch.tv/settings/connections';

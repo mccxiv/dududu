@@ -1,9 +1,10 @@
 import React from 'react';
 import Twitch from '../providers/twitch';
+import apiKey from '../config/api-key.js';
 
 export default class LoginButton extends React.Component {
 	login() {
-		Twitch.login({scope: []})
+		Twitch.login({clientId: apiKey, scopes: []})
 	}
 
 	render() {

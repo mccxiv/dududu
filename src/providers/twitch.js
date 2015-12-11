@@ -1,10 +1,12 @@
 import req from 'reqwest';
 
-window.r =req;
-
 export default class Twitch {
-	static init(clientId, callback) {
-		localStorage.twitchClientId = clientId;
+	/**
+	 * Passes the root API response, providing token if available.
+	 *
+	 * @param callback
+	 */
+	static getStatus(callback) {
 		this.grabIncomingToken();
 		this.api({method: '/kraken/'}, callback);
 	}
@@ -14,16 +16,36 @@ export default class Twitch {
 		var token = hash.substr(hash.indexOf('access_token=')).split('&')[0].split('=')[1];
 		if (token) {
 			localStorage.twitchToken = token || null;
-			window.location.replace('.'); // get rid of #hash_junk
+			history.replaceState({}, null, window.location.href.split('#')[0]);
 		}
 	}
 
-	static login() {
+	/**
+	 * Redirects the user to the Twitch authorization page.
+	 *
+	 * @param {object}   opts
+	 * @param {string}   opts.clientId - API key provided by Twitch
+	 * @param {string[]} opts.scopes - List of user scopes needed
+	 */
+	static login(opts) {
+		if (typeof opts !== 'object') {
+			throw Error('Passed a non object to Twitch.login');
+		}
+		localStorage.twitchClientId = opts.clientId;
 		window.location.href = 'https://api.twitch.tv/kraken/oauth2/authorize' +
-				'?response_type=token&client_id=' + localStorage.twitchClientId +
-				'&redirect_uri=' + window.location.href;
+			'?response_type=token&client_id=' + localStorage.twitchClientId +
+			'&redirect_uri=' + window.location.href;
 	}
 
+	/**
+	 * Dumb wrapper around the twitch API.
+	 *
+	 * @param {object} config
+	 * @param config.method - The URL part after api.twitch.tv
+	 * @param config.data - Query parameters object
+	 *
+	 * @param callback - Function that will be passed resulting data
+	 */
 	static api(config, callback) {
 		var token = localStorage.twitchToken;
 		var opts = {
@@ -35,13 +57,7 @@ export default class Twitch {
 				callback(data);
 			}
 		};
-
-		if (token) {
-			opts.data.oauth_token = token;
-		}
-
-		console.log(opts);
-
+		if (token) opts.data.oauth_token = token;
 		req(opts);
 	}
 }

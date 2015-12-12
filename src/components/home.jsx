@@ -30,7 +30,7 @@ export default class Home extends React.Component {
 			<div>
 				<div className={styles.toolbar}>
 					Hi {this.state.user}
-					<Button className={styles.logoutButton} onClick={this.logout}>Logout</Button>
+					<Button className={styles.logoutButton} onClick={this.logout.bind(this)}>Logout</Button>
 				</div>
 				<Directory user={this.state.user} />
 			</div>
@@ -38,7 +38,7 @@ export default class Home extends React.Component {
 
 		var loggedOut = (
 			<div>
-				<LoginButton />}
+				<LoginButton />
 			</div>
 		);
 

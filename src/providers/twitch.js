@@ -37,6 +37,11 @@ export default class Twitch {
 			'&redirect_uri=' + window.location.href;
 	}
 
+	static logout() {
+		delete localStorage.twitchClientId;
+		delete localStorage.twitchToken;
+	}
+
 	/**
 	 * Dumb wrapper around the twitch API.
 	 *
@@ -53,7 +58,7 @@ export default class Twitch {
 			data: config.data || {},
 			type: 'jsonp',
 			success: (data) => {
-				console.log('Twitch API response.', data);
+				console.log('Twitch API response.', config, data);
 				callback(data);
 			}
 		};

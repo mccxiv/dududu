@@ -50,12 +50,12 @@ export default class Directory extends React.Component {
 
 		if (this.state && this.state.games) {
 
-			elements.push(<h3>Following</h3>);
-			elements.push(<Streams streams={this.state.following} />);
+			elements.push(<h3 key="following">Following</h3>);
+			elements.push(<Streams key="followingStreams" streams={this.state.following} />);
 
-			Object.keys(this.state.games).forEach((key) => {
-				elements.push(<h3>{key}</h3>);
-				elements.push(<Streams streams={this.state.games[key]} />)
+			Object.keys(this.state.games).forEach((key, i) => {
+				elements.push(<h3 key={'h3'+i}>{key}</h3>);
+				elements.push(<Streams streams={this.state.games[key]} key={i} />)
 			});
 		}
 

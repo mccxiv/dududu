@@ -10,13 +10,3 @@ body {
     color: #D3D3D3;
     font-family: Roboto, sans-serif;
 }
-
-.nav {
-    height: 30px;
-    min-height: 0 !important;
-    background-color: #EF5F22;
-}
-
-.nav h1 {
-    line-height: unset !important;
-}

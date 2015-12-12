@@ -1,6 +1,8 @@
 module.exports = {
 	entry: './index.jsx',
-	output: '/bundle.js',
+	output: {
+		filename: '/this-is-the-magic-file-that-pretty-much-contains-all-js-and-css-and-images-though-it-doesnt-contain-images-because-theyre-all-external-links.js'
+	},
 	module: {
 		loaders: [
 			{

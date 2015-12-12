@@ -6,7 +6,6 @@ import Directory from './directory.jsx';
 import Sandstorm from './sandstorm.jsx';
 import {Button} from 'react-mdl';
 import styles from './home.css';
-import shake from '../assets/shake.css'
 import cn from 'classnames';
 import apiKey from '../config/client-id.js';
 

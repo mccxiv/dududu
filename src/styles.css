@@ -5,6 +5,7 @@ body {
 
 .main {
     position: absolute;
+    width: 100%;
     min-height: 100vh;
     color: #D3D3D3;
     font-family: Roboto, sans-serif;

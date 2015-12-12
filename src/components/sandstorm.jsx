@@ -8,18 +8,18 @@ export default class Sandstorm extends React.Component {
 
 		sandstorm = cn(
 			styles.sandstorm,
-			shake['shake-slow'],
-			shake['shake-constant']
+			styles['shake-slow'],
+			styles['shake-constant']
 		);
 
 		sandstorm2 = cn(
 			styles.sandstorm2,
-			shake['shake-slow'],
-			shake['shake-constant']
+			styles['shake-slow'],
+			styles['shake-constant']
 		);
 
 		return (
-			<div class="ss">
+			<div className={styles.stormContainer}>
 				<img
 					className={sandstorm2}
 					src="https://static-cdn.jtvnw.net/emoticons/v1/62834/1.0"

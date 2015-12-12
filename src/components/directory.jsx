@@ -7,7 +7,7 @@ import {Button, Icon} from 'react-mdl';
 
 export default class Directory extends React.Component {
 	componentWillMount() {
-		document.title = 'Following - Twitch 2';
+		document.title = 'Following - Twitch';
 
 		this.updateFollowing();
 		this.updateGames();

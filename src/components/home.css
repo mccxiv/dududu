@@ -8,3 +8,15 @@
     color: inherit !important;
     margin-left: 7px;
 }
+
+.loginButton {
+    cursor: pointer;
+}
+
+.loggedOut {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

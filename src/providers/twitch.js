@@ -25,7 +25,7 @@ export default class Twitch {
 	 *
 	 * @param {object}   opts
 	 * @param {string}   opts.clientId - API key provided by Twitch
-	 * @param {string[]} opts.scopes - List of user scopes needed
+	 * @param {string[]} [opts.scopes] - List of user scopes needed
 	 */
 	static login(opts) {
 		if (typeof opts !== 'object') {

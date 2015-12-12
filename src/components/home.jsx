@@ -3,10 +3,12 @@ import {Link} from 'react-router';
 import Twitch from '../providers/twitch';
 import LoginButton from './login-button.jsx';
 import Directory from './directory.jsx';
+import Sandstorm from './sandstorm.jsx';
 import {Button} from 'react-mdl';
 import styles from './home.css';
 import shake from '../assets/shake.css'
 import cn from 'classnames';
+import apiKey from '../config/client-id.js';
 
 export default class Home extends React.Component {
 	componentWillMount() {
@@ -18,6 +20,10 @@ export default class Home extends React.Component {
 				user: status.token.user_name
 			});
 		});
+	}
+
+	login() {
+		Twitch.login({clientId: apiKey});
 	}
 
 	logout() {
@@ -37,8 +43,14 @@ export default class Home extends React.Component {
 		);
 
 		var loggedOut = (
-			<div>
-				<LoginButton />
+			<div className={styles.loggedOut}>
+				<Sandstorm />
+				<img
+					className={styles.loginButton}
+					onClick={this.login}
+					src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png"
+				/>
+				<h4>Do you want an objectively better Twitch following page?</h4>
 			</div>
 		);
 

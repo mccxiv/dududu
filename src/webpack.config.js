@@ -1,7 +1,12 @@
+var filename = './a.js';
+if (process.argv[2] === '-p') filename = __dirname + '/../build/a.js';
+
+console.log(process.argv, filename);
+
 module.exports = {
 	entry: './index.jsx',
 	output: {
-		filename: '/this-is-the-magic-file-that-pretty-much-contains-all-js-and-css-and-images-though-it-doesnt-contain-images-because-theyre-all-external-links.js'
+		filename: filename
 	},
 	module: {
 		loaders: [

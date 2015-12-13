@@ -6,7 +6,7 @@ import {Router, Route} from 'react-router';
 import {createHistory} from 'history';
 import '../node_modules/react-mdl/extra/material.js';
 import '!!style!css!../node_modules/react-mdl/extra/material.css';
-import '!!style!css!./styles.css';
+import '!!style!css!./assets/styles.css';
 
 const history = createHistory({
 	queryKey: false

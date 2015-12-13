@@ -1,6 +1,6 @@
 # ![](https://static-cdn.jtvnw.net/emoticons/v1/62834/2.0) [Dududu](http://twitch.mccxiv.me/) ![](https://static-cdn.jtvnw.net/emoticons/v1/62834/1.0)
 
-The "Following" page the most important part of Twitch, but it sucks.
+The "Following" page is the most important part of Twitch, but it sucks.
 
 ##### Improvements over Twitch.tv
 - Following page updates itself, no need to refresh

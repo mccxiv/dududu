@@ -5,6 +5,7 @@
 .directory a {
     color: inherit;
     text-decoration: none;
+    font-weoght: unset;
 }
 
 .directory h3 {

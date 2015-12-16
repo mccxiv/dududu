@@ -2,6 +2,11 @@
     padding: 5px;
 }
 
+.directory a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .directory h3 {
     padding-left: 30px;
 }

@@ -4,6 +4,7 @@ import styles from './directory.css';
 import Streams from './streams.jsx';
 import Twitch from '../providers/twitch';
 import {Button, Icon} from 'react-mdl';
+import {Link} from 'react-router';
 
 export default class Directory extends React.Component {
 	componentWillMount() {
@@ -50,11 +51,12 @@ export default class Directory extends React.Component {
 
 		if (this.state && this.state.games) {
 
-			elements.push(<h3 key="following">Following</h3>);
+			elements.push(<h3 key="following"><a href="http://www.twitch.tv/directory/following/">Following</a></h3>);
 			elements.push(<Streams key="followingStreams" streams={this.state.following} />);
 
 			Object.keys(this.state.games).forEach((key, i) => {
-				elements.push(<h3 key={'h3'+i}>{key}</h3>);
+				var gameUrl = 'http://www.twitch.tv/directory/game/' + key;
+				elements.push(<h3 key={'h3'+i}><a href={gameUrl}>{key}</a></h3>);
 				elements.push(<Streams streams={this.state.games[key]} key={i} />)
 			});
 		}

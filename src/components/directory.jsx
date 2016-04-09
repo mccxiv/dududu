@@ -35,7 +35,7 @@ export default class Directory extends React.Component {
 			data.follows.forEach((game) => {
 				game = game.game; // :(
 				Twitch.api(
-					{method: '/kraken/streams', data: {game: game.name}},
+					{method: '/kraken/streams', data: {game: game.name, limit: 100}},
 					(data) => {
 						var games = (this.state? this.state.games : {}) || {};
 						games[game.name] = data.streams;

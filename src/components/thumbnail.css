@@ -26,30 +26,16 @@
 .title {
     box-sizing: border-box;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: -21px;
+    left: -1px;
+    width: calc(100% + 2px);
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     padding: 0 4px;
     background-color: rgba(0, 0, 0, 0.80);
     font-weight: 300;
-}
-
-.extra {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 4px;
-    background-color: rgba(0, 0, 0, 0.80);
-    border-bottom-left-radius: 3px;
-    font-size: 11px;
-}
-
-.extra i {
-    font-size: inherit;
-    vertical-align: -2px;
+    border: 1px solid black;
 }
 
 .name {
@@ -60,4 +46,9 @@
     background-color: rgba(0, 0, 0, 0.80);
     border-bottom-right-radius: 3px;
     font-size: 11px;
+}
+
+.name i {
+    font-size: inherit;
+    vertical-align: -2px;
 }

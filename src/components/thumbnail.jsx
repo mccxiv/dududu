@@ -38,10 +38,7 @@ export default class Thumbnail extends React.Component {
 					className={styles.thumbnail}
 					style={{background: 'url(' + img + ') center / cover'}}
 				></div>
-				<span className={styles.name}>{displayName}</span>
-				<span className={styles.extra}>
-					{uptime} <Icon name="people" /> {viewers}
-				</span>
+				<span className={styles.name}>{displayName} | {uptime} <Icon name="people" /> {viewers}</span>
 				<span className={styles.title}>{title}</span>
 			</Link>
 		);

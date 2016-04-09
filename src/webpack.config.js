@@ -1,12 +1,11 @@
-var filename = './a.js';
-if (process.argv[2] === '-p') filename = __dirname + '/../build/a.js';
+const webpack = require('webpack');
 
-console.log(process.argv, filename);
+const production = process.argv[2] === '-p';
 
 module.exports = {
 	entry: './index.jsx',
 	output: {
-		filename: filename
+		filename: production? __dirname + '/../build/a.js' : './a.js'
 	},
 	module: {
 		loaders: [
@@ -24,6 +23,11 @@ module.exports = {
 			}
 		]
 	},
+	plugins: [
+		new webpack.DefinePlugin({
+			'WEBPACK_IS_PRODUCTION': production
+		})
+	],
 	devServer: {
 		historyApiFallback: true
 	}

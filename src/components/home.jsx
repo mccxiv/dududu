@@ -22,7 +22,7 @@ export default class Home extends React.Component {
 	}
 
 	login() {
-		Twitch.login({clientId: apiKey});
+		Twitch.login({clientId: apiKey, scopes: ['user_read']});
 	}
 
 	logout() {

@@ -28,13 +28,15 @@ export default class Twitch {
 	 * @param {string[]} [opts.scopes] - List of user scopes needed
 	 */
 	static login(opts) {
+		console.log(opts);
 		if (typeof opts !== 'object') {
 			throw Error('Passed a non object to Twitch.login');
 		}
 		localStorage.twitchClientId = opts.clientId;
 		window.location.href = 'https://api.twitch.tv/kraken/oauth2/authorize' +
 			'?response_type=token&client_id=' + localStorage.twitchClientId +
-			'&redirect_uri=' + window.location.href;
+			'&redirect_uri=' + window.location.href +
+			'&scope=' + opts.scopes.join('%20');
 	}
 
 	static logout() {

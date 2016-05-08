@@ -4,7 +4,7 @@ import apiKey from '../config/client-id.js';
 
 export default class LoginButton extends React.Component {
 	login() {
-		Twitch.login({clientId: apiKey, scopes: []})
+		Twitch.login({clientId: apiKey, scopes: ['user_read']})
 	}
 
 	render() {

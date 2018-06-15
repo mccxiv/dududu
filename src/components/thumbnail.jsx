@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './thumbnail.css';
 import cn from 'classnames';
-import {Button, Icon} from 'react-mdl';
-import {Link} from 'react-router';
+import {Icon} from 'react-mdl';
 
 export default class Thumbnail extends React.Component {
 	/**
@@ -29,8 +28,10 @@ export default class Thumbnail extends React.Component {
 		} catch(e) {}
 
 		return (
-			<Link
-				to={name}
+			<a
+				href={`https://twitch.tv/${name}`}
+				target='_blank'
+				rel='noopener'
 				className={cn(styles.thumbnailContainer, this.props.className)}
 				title={title}
 			>
@@ -40,7 +41,7 @@ export default class Thumbnail extends React.Component {
 				></div>
 				<span className={styles.name}>{displayName} | {uptime} <Icon name="people" /> {viewers}</span>
 				<span className={styles.title}>{title}</span>
-			</Link>
+			</a>
 		);
 	}
 }

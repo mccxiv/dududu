@@ -1,12 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router';
 import Twitch from '../providers/twitch';
-import LoginButton from './login-button.jsx';
 import Directory from './directory.jsx';
 import Sandstorm from './sandstorm.jsx';
 import {Button} from 'react-mdl';
 import styles from './home.css';
-import cn from 'classnames';
 import apiKey from '../config/client-id.js';
 
 export default class Home extends React.Component {

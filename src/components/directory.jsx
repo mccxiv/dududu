@@ -1,10 +1,7 @@
 import React from 'react';
-import reqwest from 'reqwest';
 import styles from './directory.css';
 import Streams from './streams.jsx';
 import Twitch from '../providers/twitch';
-import {Button, Icon} from 'react-mdl';
-import {Link} from 'react-router';
 
 export default class Directory extends React.Component {
 	componentWillMount() {

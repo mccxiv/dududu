@@ -46,7 +46,8 @@ export default class Home extends React.Component {
 					onClick={this.login}
 					src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png"
 				/>
-				<h4>Do you want an objectively better Twitch following page?</h4>
+				<h4>A slightly better Twitch Following page</h4>
+				<p>... which automatically refreshes and shows streams from your followed games too.</p>
 			</div>
 		);
 

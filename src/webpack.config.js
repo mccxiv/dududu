@@ -5,7 +5,7 @@ const production = process.argv[2] === '-p';
 module.exports = {
 	entry: './index.jsx',
 	output: {
-		filename: production? __dirname + '/../build/a.js' : './a.js'
+		filename: production? __dirname + '/../docs/a.js' : './a.js'
 	},
 	module: {
 		loaders: [

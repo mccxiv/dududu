@@ -13,9 +13,6 @@ const history = createHistory({
 });
 
 ReactDOM.render(
-	<Router location="history" history={history}>
-		<Route path="/" component={Home} />
-		<Route path="/:channel" component={Channel} />
-	</Router>,
+	<Home />,
 	document.querySelector('.main')
 );
